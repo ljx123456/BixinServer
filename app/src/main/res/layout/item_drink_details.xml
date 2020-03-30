@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="#E1E1E1" />
+
+    <TextView
+        android:id="@+id/drinkName"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="酒水套餐"
+        android:textColor="#ff999999"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/drinkMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:text="￥12800.00"
+        android:textColor="#ff999999"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/drinkContent"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:gravity="center_vertical"
+        android:text="￥12800.00"
+        android:textColor="#ff999999"
+        android:textSize="11dp" />
+</RelativeLayout>

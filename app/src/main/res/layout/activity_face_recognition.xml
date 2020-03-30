@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:layout_width="274dp"
+        android:layout_height="274dp"
+        android:src="@mipmap/face_recognition"
+        android:scaleType="centerInside"/>
+
+    <Button
+        android:id="@+id/openFaceRecognition"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="48dp"
+        android:enabled="true"
+        android:background="@drawable/login_btn_code_bg"
+        android:text="打开相机进行人脸识别"
+        android:textColor="@color/white"
+        android:textSize="16dp"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="64dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"
+            android:id="@+id/incomeRecordListImg"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/incomeRecordListImg"
+            android:layout_marginLeft="6dp"
+            android:layout_centerVertical="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="浪子"
+                android:textColor="#ff535252"
+                android:textSize="13dp"
+                android:id="@+id/incomeRecordListName"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="60dp"
+                android:text="男 28岁 射手座"
+                android:textColor="#ff8b8b8b"
+                android:textSize="10dp"
+                android:id="@+id/incomeRecordListContent"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

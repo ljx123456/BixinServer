@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F4"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:background="@color/white">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="请输入您的服务价格"
+            android:textSize="16dp"
+            android:textColorHint="#8B8B8B"
+            android:theme="@style/inputStyle"
+            android:maxLength="4"
+            android:background="@null"
+            android:textColor="#535252"
+            android:id="@+id/edt_serve_set_price"
+            android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="元"
+            android:textColor="#ff535252"
+            android:textSize="16dp"
+            android:id="@+id/tv_serve_set_price"
+            android:visibility="gone"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:lineSpacingExtra="6dp"
+        android:text="服务价格仅能输入整数字，不得包含小数点及其他任何符号；且金额最低不得低于200元"
+        android:textColor="#ff8b8b8b"
+        android:textSize="11dp"
+        android:id="@+id/tv_serve_set_price_tips"/>
+
+
+</LinearLayout>

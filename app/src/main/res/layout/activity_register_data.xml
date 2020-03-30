@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="106dp"
+                    android:layout_height="106dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true"
+                    android:src="@mipmap/head_ic"
+                    android:id="@+id/registerDataHead"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/registerDataHead"
+                    android:text="点击设置头像"
+                    android:textColor="#ff999999"
+                    android:textSize="12dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp">
+                <EditText
+                    android:id="@+id/registerDataName"
+                    android:theme="@style/inputStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:hint="请输入一个昵称"
+                    android:textColorHint="#ffb6b6b6"
+                    android:textColor="#535252"
+                    android:inputType="text"
+                    android:maxLength="10"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/nameTips"
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="汉字不得超过5个字， 英文不得超过10个字。"
+                    android:textColor="#ffff6464"
+                    android:maxLines="2"
+                    android:textSize="10dp"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/registerDataBirthday"
+                android:theme="@style/inputStyle"
+                android:layout_marginRight="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="请选择您的生日"
+                android:textColorHint="#ffb6b6b6"
+                android:textColor="#535252"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="text"
+                android:maxLength="10"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/registerDataSex"
+                android:theme="@style/inputStyle"
+                android:layout_marginRight="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="请选择您的性别"
+                android:textColorHint="#ffb6b6b6"
+                android:textColor="#535252"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="text"
+                android:maxLength="10"
+                android:textSize="16dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp">
+                <EditText
+                    android:id="@+id/registerDataID"
+                    android:theme="@style/inputStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:hint="请填写一个推荐码"
+                    android:textColorHint="#ffb6b6b6"
+                    android:textColor="#535252"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/regIDBox"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/searchpage_box_qr"
+                    android:scaleType="centerInside" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/registerDataNext"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="44dp"
+                android:layout_marginRight="44dp"
+                android:layout_marginTop="44dp"
+                android:enabled="false"
+                android:background="@drawable/login_btn_code_bg"
+                android:text="开启比心"
+                android:textColor="@color/white"
+                android:textSize="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentBottom="true"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RegisterCheckboxTheme"
+                        android:id="@+id/check_register"
+                        android:checked="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已阅读并同意"
+                        android:textColor="#8B8B8B"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="《服务人员使用注册协议》"
+                        android:textColor="#84CEFE"
+                        android:textSize="12dp"
+                        android:id="@+id/tv_show"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="与"
+                        android:textColor="#8B8B8B"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="《隐私协议》"
+                        android:textColor="#84CEFE"
+                        android:textSize="12dp"
+                        android:id="@+id/tv_show2"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

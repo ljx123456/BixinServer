@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F4"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/item_bg"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:hint="请输入您的真实姓名"
+            android:textColorHint="#40000000"
+            android:textColor="#535252"
+            android:textSize="16dp"
+            android:theme="@style/inputStyle"
+            android:background="@null"
+            android:id="@+id/edit_name"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4EF"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:hint="请输入您的身份证号码"
+            android:textColorHint="#40000000"
+            android:textColor="#535252"
+            android:textSize="16dp"
+            android:theme="@style/inputStyle"
+            android:inputType="text"
+            android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM"
+            android:background="@null"
+            android:maxLength="18"
+            android:id="@+id/edit_card"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_apply_broker_bg"
+            android:enabled="false"
+            android:text="下一步"
+            android:textColor="#ffffffff"
+            android:textSize="16dp"
+            android:id="@+id/btn_next"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ECF0F4"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/notiBanner"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:canLoop="true"
+            android:visibility="gone"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/notiRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/notiList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="14dp"/>
+            </android.support.v4.widget.SwipeRefreshLayout>
+            <include layout="@layout/layout_none_message"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <include layout="@layout/layout_error_network" />
+</RelativeLayout>

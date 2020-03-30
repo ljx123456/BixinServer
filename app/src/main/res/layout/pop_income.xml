@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popServeList"
+    android:layout_width="100dp"
+    android:layout_height="96dp"
+    android:background="@drawable/share_two"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/goHome"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="#ff333333"
+        android:textSize="13dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/goMessage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="消息中心"
+        android:textColor="#ff333333"
+        android:textSize="13dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/goOrder"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="订单中心"
+        android:textColor="#ff333333"
+        android:textSize="13dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/goShare"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="分享"
+        android:textColor="#ff333333"
+        android:textSize="13dp"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/goReport"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="提现记录"
+        android:textColor="#ff333333"
+        android:textSize="13dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E1E1E1" />
+
+    <TextView
+        android:id="@+id/goBlock"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="提现设置"
+        android:textColor="#ff333333"
+        android:textSize="13dp" />
+
+</LinearLayout>

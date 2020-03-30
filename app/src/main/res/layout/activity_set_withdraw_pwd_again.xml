@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请再次填写您的密码以确认"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/tv_set_withdraw_password_again_title"/>
+
+    </LinearLayout>
+
+    <com.ycwl.servebixin.cn.ui.withdrawal.utils.PasswordCode
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/pc_set_withdraw_password_again"></com.ycwl.servebixin.cn.ui.withdrawal.utils.PasswordCode>
+
+    <Button
+        android:id="@+id/set_withdraw_password_again"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="48dp"
+        android:enabled="false"
+        android:background="@drawable/login_btn_code_bg"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="16dp"/>
+</LinearLayout>

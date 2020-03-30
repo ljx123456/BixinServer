@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ECF0F4"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="#ff8b8b8b"
+        android:textSize="16dp"
+        android:drawableRight="@mipmap/drop_down"
+        android:id="@+id/tv_withdraw_record_month"/>
+    <com.ycwl.servebixin.cn.view.MyRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/recy_withdraw_record_details"
+        android:scrollbars="none"></com.ycwl.servebixin.cn.view.MyRecyclerView>
+
+</LinearLayout>

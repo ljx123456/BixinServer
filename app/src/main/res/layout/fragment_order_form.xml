@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/orderFormTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+
+            app:xTabIndicatorColor="#535252"
+            app:xTabIndicatorHeight="2dp"
+            app:xTabIndicatorWidth="12dp"
+            app:xTabMode="fixed"
+            app:xTabSelectedTextColor="#535252"
+            app:xTabSelectedTextSize="14dp"
+            app:xTabTextColor="#8B8B8B"
+            app:xTabTextSize="14dp" />
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/orderFormPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

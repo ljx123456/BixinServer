@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="#ECF0F4"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#fff">
+        <TextView
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:text="解绑时间："
+            android:textColor="#ff8b8b8b"
+            android:textSize="12dp"
+            android:id="@+id/tv_noti_bind_time_title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-03-24 22:30"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/tv_noti_bind_time"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="解绑达人"
+            android:textColor="#ff535252"
+            android:textSize="16dp"
+            android:id="@+id/tv_noti_bind_content_title"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                app:riv_oval="true"
+                android:id="@+id/notiBindImg"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/notiBindImg"
+                android:layout_marginLeft="6dp"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="浪子"
+                    android:textColor="#ff535252"
+                    android:textSize="13dp"
+                    android:id="@+id/notiBindName"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="60dp"
+                    android:text="男 28岁 射手座"
+                    android:textColor="#ff8b8b8b"
+                    android:textSize="10dp"
+                    android:id="@+id/notiBindContent"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="138-0828-8866"
+                android:textColor="#ff84cefe"
+                android:textSize="13dp"
+                android:id="@+id/notiBindPhone"/>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

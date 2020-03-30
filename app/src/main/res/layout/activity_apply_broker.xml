@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/broker_bg"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/titleLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@mipmap/nav_button_back_white_nor"/>
+        <ImageView
+            android:id="@+id/titleRight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="12dp"
+            android:tint="@color/white"
+            android:src="@mipmap/button_doubt"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/layout_apply_broker_bg"
+            android:paddingBottom="48dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="12dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="一、什么是达人经纪人？"
+                android:textColor="#ffffffff"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="1.达人经纪人为达人管理人员，帮助解决兴趣达人的疑问和需求。 "
+                android:textColor="#ffffffff"
+                android:textSize="12dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="2.在成功申请成为达人经纪人后，即可邀请您的兴趣达人上线平台。 "
+                android:textColor="#ffffffff"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="3.所绑定的兴趣达人每一次成功接单您都会获得丰厚的现金奖励。"
+                android:textColor="#ffffffff"
+                android:textSize="12dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="4.成为达人经纪人后将会获得平台的派单机会"
+                android:textColor="#ffffffff"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="二、怎么绑定我的兴趣达人？"
+                android:textColor="#ffffffff"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="兴趣达人在成功注册后需绑定达人经纪人，提供您的比心娱乐ID或者二维码供其填写和扫描，系统将自动绑定到您的达人列表下。 "
+                android:textColor="#ffffffff"
+                android:textSize="12dp"/>
+        </LinearLayout>
+        
+        <Button
+            android:layout_width="210dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/broker_btn_bg"
+            android:id="@+id/btn_apply_broker"/>
+    </RelativeLayout>
+
+</LinearLayout>

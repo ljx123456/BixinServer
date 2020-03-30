@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginRight="42dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/broker_upload_bg"
+            android:id="@+id/layoutDefault">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:id="@+id/layoutAdd">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传手持身份证人相面照片"
+                    android:textColor="#73000000"
+                    android:textSize="12dp"
+                    android:drawableLeft="@mipmap/add_s"
+                    android:drawablePadding="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="（请确保身份证信息清晰可见）"
+                    android:textColor="#73000000"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginRight="42dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="fitXY"
+            app:riv_corner_radius="12dp"
+            android:id="@+id/imageUpload"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginRight="42dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:background="@drawable/broker_upload_btn_bg"
+            android:text="重新上传"
+            android:textColor="#ffffffff"
+            android:textSize="13dp"
+            android:id="@+id/imageAgain"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="15dp"
+        android:enabled="false"
+        android:background="@drawable/btn_apply_broker_bg"
+        android:text="申请成为达人经纪人"
+        android:textColor="#ffffffff"
+        android:textSize="16dp"
+        android:id="@+id/btnUpload"/>
+
+</LinearLayout>

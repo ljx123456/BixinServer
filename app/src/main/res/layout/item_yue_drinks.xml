@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+
+    android:layout_marginTop="12dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/drinksImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:riv_oval="true" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/layoutDrinkNum">
+
+            <ImageView
+                android:id="@+id/drinksSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@mipmap/button_minus" />
+
+            <TextView
+                android:id="@+id/drinksNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:text="0"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/drinksAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@mipmap/button_add" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/drinksMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/layoutDrinkNum"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:text="￥880.00"
+            android:textColor="#ffff6464"
+            android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/drinksImage"
+            android:layout_toLeftOf="@id/drinksMoney"
+            android:layout_marginLeft="6dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:id="@+id/layoutDrink">
+            <TextView
+                android:id="@+id/drinksName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="情迷巴西"
+                android:textColor="#ff333333"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/drinksContext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:text="洋酒+苏打水+果盘…洋酒+苏打水+果盘…洋酒+苏打水+果盘…"
+                android:textColor="#ff999999"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

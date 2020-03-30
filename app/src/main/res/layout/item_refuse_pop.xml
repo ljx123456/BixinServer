@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="临时有事"
+            android:textColor="#ff535252"
+            android:textSize="13dp"
+            android:id="@+id/item_pop_content"/>
+        <CheckBox
+            android:id="@+id/item_pop_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:enabled="false"
+            style="@style/CustomCheckboxTheme"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ECF0F4"
+        android:id="@+id/item_pop_line"/>
+
+</LinearLayout>

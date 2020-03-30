@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ECF0F4"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/null_conversation"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/noNetworkView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:src="@mipmap/illustration_nomessage" />
+
+            <TextView
+                android:id="@+id/workTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noNetworkView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="暂无会话"
+                android:textColor="#b7b9bd" />
+            <!--<TextView-->
+            <!---->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="暂无会话"-->
+            <!--android:textColor="#999999"-->
+            <!--android:textSize="16sp"-->
+            <!--android:visibility="visible"/>-->
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/conv_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:divider="@drawable/main_list_divider_line"
+            android:dividerHeight="0.3dp"
+            android:headerDividersEnabled="false"/>
+
+    </FrameLayout>
+
+</LinearLayout>

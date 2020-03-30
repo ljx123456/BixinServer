@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_height="206dp"
+                android:id="@+id/layout_idCardFront">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/id_card_back"
+                    android:scaleType="fitXY"
+                    app:riv_corner_radius="12dp"
+                    android:id="@+id/idCardFront"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="点击上传身份证人像面"
+                    android:textColor="#ff535252"
+                    android:textSize="12dp"
+                    android:id="@+id/idCardFrontTips"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="32dp"
+                android:layout_height="206dp"
+                android:id="@+id/layout_idCardBack">
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/id_card_positive"
+                    android:scaleType="fitXY"
+                    app:riv_corner_radius="12dp"
+                    android:id="@+id/idCardBack"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="点击上传身份证国徽面"
+                    android:textColor="#ff535252"
+                    android:textSize="12dp"
+                    android:id="@+id/idCardBackTips"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:enabled="false"
+        android:background="@drawable/btn_apply_broker_bg"
+        android:text="提交信息"
+        android:textColor="#ffffffff"
+        android:textSize="16dp"
+        android:id="@+id/btnUpload"/>
+
+</LinearLayout>

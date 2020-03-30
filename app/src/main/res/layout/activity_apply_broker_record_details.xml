@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="36dp"
+            android:gravity="right"
+            android:text="2019-03-28"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/apply_details_time1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_time1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="42dp"
+            android:src="@mipmap/button_check_green"
+            android:id="@+id/apply_details_img1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_img1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="42dp"
+            android:text="审核资料已提交"
+            android:textStyle="bold"
+            android:textColor="#ff535252"
+            android:textSize="16dp"
+            android:id="@+id/apply_details_content1"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="128dp"
+            android:background="#D9D9D9"
+            android:layout_toRightOf="@id/apply_details_time1"
+            android:layout_marginLeft="17dp"
+            android:layout_below="@+id/apply_details_img1"
+            android:id="@+id/apply_details_view1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_below="@id/apply_details_time1"
+            android:layout_marginTop="115dp"
+            android:gravity="right"
+            android:text="2019-03-28"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/apply_details_time2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_time2"
+            android:layout_below="@+id/apply_details_view1"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/button_check_green"
+            android:id="@+id/apply_details_img2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_img2"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/apply_details_content1"
+            android:layout_marginTop="128dp"
+            android:text="平台审核中"
+            android:textStyle="bold"
+            android:textColor="#ff535252"
+            android:textSize="16dp"
+            android:id="@+id/apply_details_content2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/apply_details_content2"
+            android:layout_below="@+id/apply_details_content2"
+            android:layout_marginTop="6dp"
+            android:text="平台将在五个工作日内做出审核"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/apply_details_des2"/>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="128dp"
+            android:background="#D9D9D9"
+            android:layout_toRightOf="@id/apply_details_time2"
+            android:layout_marginLeft="17dp"
+            android:layout_below="@+id/apply_details_img2"
+            android:id="@+id/apply_details_view2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_below="@id/apply_details_time2"
+            android:layout_marginTop="115dp"
+            android:gravity="right"
+            android:text="2019-03-28"
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/apply_details_time3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_time3"
+            android:layout_below="@+id/apply_details_view2"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/button_checkout_pink_pre"
+            android:id="@+id/apply_details_img3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/apply_details_img3"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/apply_details_content2"
+            android:layout_marginTop="128dp"
+            android:text="审核未通过"
+            android:textStyle="bold"
+            android:textColor="#ff535252"
+            android:textSize="16dp"
+            android:id="@+id/apply_details_content3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/apply_details_content3"
+            android:layout_below="@+id/apply_details_content3"
+            android:layout_marginTop="6dp"
+            android:text=""
+            android:textColor="#ff535252"
+            android:textSize="12dp"
+            android:id="@+id/apply_details_des3"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:enabled="true"
+            android:background="@drawable/btn_apply_broker_bg"
+            android:text="重新申请"
+            android:textColor="#ffffffff"
+            android:textSize="16dp"
+            android:visibility="gone"
+            android:id="@+id/btnApplyAgain"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

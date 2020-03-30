@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="82dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/loginTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:paddingLeft="12dp"
+            app:xTabDividerWidth="1dp"
+            app:xTabDividerHeight="16dp"
+            app:xTabDividerColor="#E4E4EF"
+            app:xTabDividerGravity="center"
+            app:xTabIndicatorColor="#535252"
+            app:xTabIndicatorHeight="2dp"
+            app:xTabIndicatorWidth="16dp"
+            app:xTabSelectedTextColor="#535252"
+            app:xTabSelectedTextSize="16dp"
+            app:xTabTextColor="#8B8B8B"
+            app:xTabTextSize="16dp" />
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/loginPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ycwl.servebixin.cn">
+
+    <permission
+        android:name="com.ycwl.servebixin.cn.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--用于获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!--用于访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!--用于写入缓存数据到扩展存储卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-feature android:name="android.hardware.camera"></uses-feature>
+    <uses-feature android:name="android.hardware.autofocus"></uses-feature>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".base.AppProject"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        tools:replace="icon,label,theme,name"
+        android:roundIcon="@mipmap/ic_app"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+
+        <activity
+            android:name=".ui.main.activity.LaunchActivity"
+            android:theme="@style/LaunchTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--<action android:name=""-->
+                <data
+                    android:host="locnlhsst"
+                    android:pathPrefix="/haha"
+                    android:scheme="textapp" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.main.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <!--登陆-->
+        <activity
+            android:name=".ui.login.activity.LoginActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <receiver
+            android:name=".jpush.JpushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <!--Required 用户注册 SDK 的 intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收 SDK 消息的 intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收 SDK 通知栏信息的 intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的 intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.ycwl.servebixin.cn" />
+            </intent-filter>
+        </receiver>
+        <!-- Since JCore2.0.0 Required SDK核心功能-->
+        <!-- 这个Service要继承JCommonService -->
+        <service android:name=".jpush.JpushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="b2a8076f779c87568f4d0656" />
+
+
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <!--<service-->
+            <!--android:name="cn.jpush.android.service.PushService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.jpush.android.intent.REGISTER" />-->
+                <!--<action android:name="cn.jpush.android.intent.REPORT" />-->
+                <!--<action android:name="cn.jpush.android.intent.PushService" />-->
+                <!--<action android:name="cn.jpush.android.intent.PUSH_TIME" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+
+        <!--定位-->
+        <service android:name="com.amap.api.location.APSService"></service>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a5e60ad8275d3d547a627ff96ed99106">//开发者申请的key
+        </meta-data>
+
+        <!--验证码登陆-->
+        <activity
+            android:name=".ui.login.activity.LoginCodeActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <!--人脸识别-->
+        <activity
+            android:name=".ui.login.activity.FaceRecogintionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--设置密码-->
+        <activity
+            android:name=".ui.login.activity.SetPasswordActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--完善资料-->
+        <activity
+            android:name=".ui.login.activity.RegisterDataActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--使用协议-->
+        <activity
+            android:name=".ui.login.activity.RegisterAgreementActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--隐私协议-->
+        <activity
+            android:name=".ui.login.activity.PrivacyAgreementActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--扫码-->
+        <activity android:name=".utils.zxing.android.CaptureActivity" />
+
+        <!--忘记密码手机号-->
+        <activity
+            android:name=".ui.login.activity.ResetPasswordPhoneActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--忘记密码验证码-->
+        <activity
+            android:name=".ui.login.activity.ResetPasswordCodeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--忘记密码新密码-->
+        <activity
+            android:name=".ui.login.activity.ResetPasswordActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+
+        <!--加入我们-->
+        <activity
+            android:name=".ui.login.activity.JoinActivity"
+            android:screenOrientation="portrait" />
+
+        <!--完善资料卡-->
+        <activity
+            android:name=".ui.main.activity.CompleteDataActivity"
+            android:screenOrientation="portrait" />
+
+        <!--完善资料-->
+        <activity
+            android:name=".ui.main.activity.CompleteActivity"
+            android:screenOrientation="portrait" />
+
+        <!--完善资料审核详情-->
+        <activity
+            android:name=".ui.main.activity.CompleteDataDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--实名认证第一步-->
+        <activity
+            android:name=".ui.main.activity.RealnameNameActivity"
+            android:screenOrientation="portrait" />
+
+        <!--实名认证第二步-->
+        <activity
+            android:name=".ui.main.activity.RealnameCardActivity"
+            android:screenOrientation="portrait" />
+
+        <!--实名认证详情-->
+        <activity
+            android:name=".ui.main.activity.RealnameDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--修改资料-->
+        <activity
+            android:name=".ui.main.activity.EditUserActivity"
+            android:screenOrientation="portrait" />
+
+        <!--图片查看-->
+        <activity
+            android:name=".ui.image.ImageActivity"
+            android:screenOrientation="portrait" />
+
+        <!--视频播放-->
+        <activity
+            android:name=".ui.main.activity.VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/VideoTheme.NoActionBar">
+
+        </activity>
+
+        <!--职业选择-->
+        <activity
+            android:name=".ui.main.activity.OccupationActivity"
+            android:screenOrientation="portrait" />
+
+        <!--标签选择-->
+        <activity
+            android:name=".ui.main.activity.TagsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--二维码-->
+        <activity android:name=".ui.main.activity.BiXinIDActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--服务设置-->
+        <activity
+            android:name=".ui.main.activity.ServeSetActivity"
+            android:screenOrientation="portrait" />
+        <!--服务详情-->
+        <activity
+            android:name=".ui.main.activity.ServeDetailsSetActivity"
+            android:screenOrientation="portrait" />
+
+        <!--服务价格设置-->
+        <activity
+            android:name=".ui.main.activity.ServeSetPriceActivity"
+            android:screenOrientation="portrait" />
+        <!--达人经纪人设置-->
+        <activity
+            android:name=".ui.main.activity.ServeSetLeaderActivity"
+            android:screenOrientation="portrait" />
+        <!--我的达人经纪人-->
+        <activity
+            android:name=".ui.main.activity.ServeMyLeaderActivity"
+            android:screenOrientation="portrait" />
+
+        <!--KTV设置-->
+        <activity
+            android:name=".ui.main.activity.ServeSetKTVActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现密码验证码-->
+        <activity
+            android:name=".ui.withdrawal.activity.SetWithdrawPwdCodeActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现密码-->
+        <activity
+            android:name=".ui.withdrawal.activity.SetWithdrawPwdActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--提现密码确认-->
+        <activity
+            android:name=".ui.withdrawal.activity.SetWithdrawPwdAgainActivity"
+            android:screenOrientation="portrait" />
+
+        <!--收益-->
+        <activity
+            android:name=".ui.withdrawal.activity.IncomeActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现记录-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现记录详情-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawRecordDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现设置-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawSetActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--验证提现密码-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawOldPwdActivity"
+            android:screenOrientation="portrait" />
+
+        <!--修改提现密码新密码-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawSetPwdActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--修改提现密码确认-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawChangePwdActivity"
+            android:screenOrientation="portrait" />
+
+        <!--重置密码验证码-->
+        <activity android:name=".ui.withdrawal.activity.WithdrawResetPwdCodeActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--重置提现密码新密码-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawResetPwdActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--重置提现密码确认-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawResetPwdAgainActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现方式-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawTypeActivity"
+            android:screenOrientation="portrait" />
+
+        <!--提现-->
+        <activity
+            android:name=".ui.withdrawal.activity.WithdrawActivity"
+            android:screenOrientation="portrait" />
+
+        <!--收益明细-->
+        <activity
+            android:name=".ui.withdrawal.activity.IncomeRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <!--收益明细记录详情-->
+        <activity
+            android:name=".ui.withdrawal.activity.IncomeRecordDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--申请经纪人-->
+        <activity android:name=".ui.broker.activity.ApplyBrokerActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--申请经纪人问题-->
+        <activity android:name=".ui.broker.activity.ApplyBrokerQuestionActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--申请经纪人上传照片-->
+        <activity android:name=".ui.broker.activity.ApplyBrokerUploadActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--申请经纪人相机拍摄-->
+        <activity android:name=".ui.broker.utils.CameraActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+
+        <!--申请经纪人申请记录-->
+        <activity android:name=".ui.broker.activity.ApplyBrokerRecordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <!--申请经纪人申请记录详情-->
+        <activity android:name=".ui.broker.activity.ApplyBrokerRecordDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--经纪人主页-->
+        <activity android:name=".ui.broker.activity.BrokerActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--经纪人约玩达人-->
+        <activity android:name=".ui.broker.activity.BrokerServeActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--经纪人约玩场地-->
+        <activity android:name=".ui.broker.activity.BrokerKTVActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--添加经纪人约玩场地-->
+        <activity android:name=".ui.broker.activity.BrokerSearchKTVActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--生成订单-->
+        <activity android:name=".ui.yue.activity.YueActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <!--添加ktv列表-->
+        <activity android:name=".ui.yue.activity.YueKTVActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--添加包房列表-->
+        <activity android:name=".ui.yue.activity.YueKTVBoxActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--添加达人-->
+        <activity android:name=".ui.yue.activity.YueServeActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--添加酒水-->
+        <activity android:name=".ui.yue.activity.YueDrinkActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--订单详情-->
+        <activity android:name=".ui.order.activity.OrderFormDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--订单酒水-->
+        <activity android:name=".ui.order.activity.OrderFormDrinkActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--抢单详情-->
+        <activity android:name=".ui.order.activity.GrabOrderDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--抢单酒水-->
+        <activity android:name=".ui.order.activity.GrabOrderDrinkActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--设置-->
+        <activity android:name=".ui.set.activity.SetActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--账号与安全-->
+        <activity android:name=".ui.set.activity.AccountActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--实名认证通过-->
+        <activity android:name=".ui.set.activity.AccountDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--通知设置-->
+        <activity android:name=".ui.set.activity.SetNotificationActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--黑名单-->
+        <activity android:name=".ui.set.activity.BlackListActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--意见反馈-->
+        <activity android:name=".ui.set.activity.FeedBackActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--关于我们-->
+        <activity android:name=".ui.set.activity.RegardWeActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.set.activity.ExplainActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--绑定通知-->
+        <activity android:name=".ui.message.activity.BindNotiActivity"
+            android:screenOrientation="portrait"/>
+        <!--活动banner-->
+        <activity android:name=".ui.message.activity.BannerActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--粉丝界面-->
+        <activity android:name=".ui.main.activity.FansActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--修改密码验证码界面-->
+        <activity android:name=".ui.set.activity.ChangePWCodeActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--修改密码密码界面-->
+        <activity android:name=".ui.set.activity.ChangePWActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--修改意见反馈详情界面-->
+        <activity android:name=".ui.message.activity.FeedBackDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--修改活动界面-->
+        <activity android:name=".ui.message.activity.ActivityHtmlActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true"
+            android:taskAffinity="net.sourceforge.simcpux"
+            android:launchMode="singleTask">
+        </activity>
+
+        <!--7.0相机调用-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.ycwl.servebixin.cn.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data android:value="5ce3ff350cafb21233000605" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="BiXinServe" android:name="UMENG_CHANNEL"/>
+
+    </application>
+
+</manifest>
